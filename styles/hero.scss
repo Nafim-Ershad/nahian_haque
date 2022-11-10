@@ -1,0 +1,88 @@
+#hero-container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    &>div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &.left-side {
+            background-color: $primary-color;
+            color: $text-color;
+            .name-title-container {
+                height: 120px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 0 35px;
+                a {
+                    color: $text-color;
+                    font-size: 1.125rem;
+                    font-weight: 700;
+                    letter-spacing: 0.3rem;
+                    cursor: pointer;
+                }
+            }
+            .hero-left {
+                height: calc(100% - 120px);
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 0 35px;
+                h1 {
+                    font-size: 3rem;
+                    letter-spacing: 0.5rem;
+                }
+            }
+        }
+        &.right-side {
+            background-color: $secondary-color;
+            .navigation-container {
+                width: 80%;
+                height: 120px;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                font-size: 16px;
+                text-transform: uppercase;
+                a {
+                    text-decoration: none;
+                    transition: transform 300ms ease-in-out;
+                    &:hover {
+                        transform: scale(1.2);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    .hire-me-container {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotateZ(35deg);
+        text-decoration: none;
+        background-color: $accent-color;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        color: $text-color;
+        text-shadow: 2px 2px 5px black;
+        transition: transform 300ms ease-in-out;
+        &:hover {
+            transform: translate(-50%, -50%) rotateZ(-35deg);
+        }
+    }
+}
