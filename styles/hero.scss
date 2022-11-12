@@ -13,7 +13,7 @@
             position: relative;
             background-color: $primary-color;
             color: $text-color;
-            .name-title-container {
+            .header-container {
                 height: 120px;
                 width: 100%;
                 display: flex;
@@ -42,8 +42,14 @@
                 justify-content: center;
                 padding: 0 35px;
                 h1 {
+                    margin: 15px 0;
                     font-size: 3rem;
                     letter-spacing: 0.5rem;
+                }
+                h3 {
+                    margin: 15px 0;
+                    font-size: 1.2rem;
+                    letter-spacing: 0.1rem;
                 }
             }
         }
@@ -95,4 +101,135 @@
     }
 }
 
-@media screen and (max-width: 800px) {}
+@media screen and (max-width: 900px) {
+    #hero-container {
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &>div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &.left-side {
+                position: relative;
+                height: 100%;
+                width: 100%;
+                background-color: $primary-color;
+                color: $text-color;
+                .header-container {
+                    height: 120px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0;
+                    a {
+                        margin-left: 35px;
+                        color: $text-color;
+                        font-size: 1.125rem;
+                        font-weight: 700;
+                        letter-spacing: 0.3rem;
+                        cursor: pointer;
+                    }
+                    .nav-bar {
+                        width: 70px;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                        font-size: 1.25rem;
+                        font-weight: 700;
+                        cursor: pointer;
+                        .bars {
+                            margin-right: 35px;
+                        }
+                        .nav-links-container {
+                            height: 100vh;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: flex-start;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            z-index: 100;
+                            background-color: $secondary-color;
+                            transform: translateX(-50%);
+                            color: black;
+                            .cancel {
+                                height: 120px;
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 25px;
+                                font-weight: 900;
+                            }
+                            .nav-links {
+                                height: calc(100vh - 12px);
+                                display: flex;
+                                flex-direction: column;
+                                a {
+                                    text-transform: uppercase;
+                                    color: black;
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .hero-left {
+                    height: calc(100% - 120px);
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 0 35px;
+                    h1 {
+                        margin: 15px 0;
+                        font-size: 3rem;
+                        letter-spacing: 0.5rem;
+                    }
+                    h3 {
+                        margin: 15px 0;
+                        font-size: 1.2rem;
+                        letter-spacing: 0.1rem;
+                    }
+                }
+            }
+            &.right-side {
+                display: none;
+                width: 0;
+            }
+        }
+        .hire-me-container {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateZ(35deg);
+            text-decoration: none;
+            background-color: $accent-color;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            color: $text-color;
+            text-shadow: 2px 2px 5px black;
+            transition: transform 300ms ease-in-out;
+            &:hover {
+                transform: translate(-50%, -50%) rotateZ(-35deg);
+            }
+        }
+    }
+}
